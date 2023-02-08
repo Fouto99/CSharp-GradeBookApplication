@@ -19,15 +19,10 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException();
             }
 
-            double total = 0.0;
-            Students.ForEach(student => total += student.AverageGrade);
-
-            double percentage = (total / Students.Count) * 100;
-
-            if (percentage >= 80) return 'A';
-            else if (percentage < 80 && percentage >= 60) return 'B';
-            else if (percentage < 60 && percentage >= 40) return 'C';
-            else if (percentage < 40 && percentage >= 20) return 'D';
+            if (averageGrade >= 80) return 'A';
+            else if (averageGrade < 80 && averageGrade >= 60) return 'B';
+            else if (averageGrade < 60 && averageGrade >= 40) return 'C';
+            else if (averageGrade < 40 && averageGrade >= 20) return 'D';
             return 'F';
         }
     }
